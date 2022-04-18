@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+<link rel="stylesheet" href="../../css/styleUsers.css" th:href="@{../css/styleUsers.css}">
 <head>
     <meta charset="UTF-8">
     <title>Пользователи</title>
 </head>
 <body>
-<table>
-<tr>
-    <td>Имя</td>
-    <td>Фамилия</td>
-    <td>email</td>
-<!--    <td>Действия</td>-->
-</tr>
+<table class="table">
+    <thead>
+    <tbody>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>email</th>
+        <th></th>
+        <th></th>
+    </tr>
     <th:block th:each="user : ${users}">
         <tr>
             <td th:text="${user.getName()}"></td>
@@ -30,7 +34,10 @@
             </td>
         </tr>
     </th:block>
+    </tbody>
 </table>
-<input type="button" th:value="Добавить" onclick="window.location.href = 'users/new'">
+<div class="centre">
+    <input type="button" th:value="Добавить" onclick="window.location.href = 'users/new'">
+</div>
 </body>
 </html>
